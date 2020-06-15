@@ -1,0 +1,19 @@
+{
+  "name": "wefox-protractor",
+  "version": "0.0.0",
+  "description": "A protractor-based test suite for the Wefox website",
+  "main": "index.js",
+  "scripts": {
+    "test": "protractor conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peterloggie/wefox-protractor.git"
+  },
+  "author": "Peter Loggie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/peterloggie/wefox-protractor/issues"
+  },
+  "homepage": "https://github.com/peterloggie/wefox-protractor#readme"
+}
