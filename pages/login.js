@@ -1,16 +1,18 @@
 var EC = protractor.ExpectedConditions;
 
-var LoginPage = function() {
+class LoginPage {
 
-    this.title = "Log in - wefox";
-    this.path = "https://my.wefox.de/login?locale=en";
+    constructor() {
+        this.title = "Log in - wefox";
+        this.path = "https://my.wefox.de/login?locale=en";
+    }
 
-    this.visit = async function() {
+    async visit() {
         browser.get(this.path);
         await browser.wait(EC.titleIs(this.title), 10000);
     }
 
-    this.logIn = async function(username, password) {
+    async logIn(username, password) {
         await element(by.xpath("//label[@for='user_name']")).click();
         await element(by.id("user_name")).sendKeys(username);
         await element(by.xpath("//label[@for='password']")).click();

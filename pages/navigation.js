@@ -1,8 +1,8 @@
 var EC = protractor.ExpectedConditions;
 
-var NavigationBar = function() {
+class NavigationBar {
 
-    this.goTo = async function(optionTitle) {
+    async goTo(optionTitle) {
         var currentTitle = await browser.driver.getTitle()
         await browser.driver.findElement(by.xpath("//li/a[@title='" + optionTitle + "']")).click()
         await browser.wait(EC.not(EC.titleIs(currentTitle), 10000));

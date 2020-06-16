@@ -1,24 +1,29 @@
 var EC = protractor.ExpectedConditions;
 
-var ProfilePage = function() {
+class ProfilePage {
 
-    this.title = "Profile - wefox";
+    constructor() {
+        this.title = "Profile - wefox";
+    }
 
-    this.goTo = async function(section) {
+    async goTo(section) {
         var currentTitle = await browser.driver.getTitle()
         var href = section.replace(/\s+/g, '-').toLowerCase();
         var xpath = "//a[@href='/account/" + href + "']"
         await browser.driver.findElement(by.xpath(xpath)).click()
         await browser.wait(EC.not(EC.titleIs(currentTitle), 10000));
     }
+
 };
 
 
-var PersonalDetailsPage = function() {
+class PersonalDetailsPage {
 
-    this.title = "Personal details - wefox";
+    constructor() {
+        this.title = "Personal details - wefox";
+    }
 
-    this.getPersonalData = async function() {
+    async getPersonalData() {
         // not all the elements have IDs, so we locate using the
         // value of their "formcontrol" attribute
         var formControlMap = {
