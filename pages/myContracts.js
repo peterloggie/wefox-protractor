@@ -1,8 +1,10 @@
 
-var MyContractsPage = function() {
+class MyContractsPage {
 
-    this.title = "Your Contracts - wefox";
-    this.path = "/contracts"
+    constructor() {
+        this.title = "Your Contracts - wefox";
+        this.path = "/contracts"
+    }
 
 }
 
